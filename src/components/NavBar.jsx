@@ -10,7 +10,6 @@ function NavBar({ logoSrc }) {
       </div>
       <div className="nav-onglets">
         <NavLink to="/" end>Accueil</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
         <NavLink to="/plan">Plan</NavLink>
         <NavLink to="/documents">Documents</NavLink>
         <NavLink to="/checklist">Checklist</NavLink>

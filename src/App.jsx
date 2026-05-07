@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Accueil from './pages/Accueil'
-import ContactPage from './pages/ContactPage'
 import Plan from './pages/Plan'
 import Documents from './pages/Documents'
 import Checklist from './pages/Checklist'
@@ -15,7 +14,6 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Accueil />} />
-            <Route path="/contact" element={<ContactPage />} />
             <Route path="/plan" element={<Plan />} />
             <Route path="/documents" element={<Documents />} />
             <Route path="/checklist" element={<Checklist />} />

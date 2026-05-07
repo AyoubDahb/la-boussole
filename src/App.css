@@ -221,3 +221,30 @@ body {
   color: #1E3A5F;
 }
 
+.progressBar {
+  width: 100%;
+  max-width: 420px;
+  height: 18px;
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 999px;
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.progressBar::-webkit-progress-bar {
+  background-color: #e5e7eb;
+  border-radius: 999px;
+}
+
+.progressBar::-webkit-progress-value {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progressBar::-moz-progress-bar {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  border-radius: 999px;
+}

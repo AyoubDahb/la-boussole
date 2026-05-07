@@ -16,21 +16,25 @@ function Checklist() {
       return depart;
     }
   });
-      useEffect(() => {
-      localStorage.setItem("checkStore", JSON.stringify(checkedTaches));
-    }, [checkedTaches]);
+  useEffect(() => {
+    localStorage.setItem("checkStore", JSON.stringify(checkedTaches));
+  }, [checkedTaches]);
 
   const basculeTache = (id) => {
     setCheckedTaches((precedent) => ({
       ...precedent, // copie tout l'objet
       [id]: !precedent[id], // inverse juste la valeur de l'id cliqué
     }));
-
-
   };
 
+  const totalTaches = taches.length;
+  const tachesCochees = Object.values(checkedTaches).filter(
+    (value) => value,
+  ).length;
+  const progression = (tachesCochees / totalTaches) * 100;
 
-  console.log(JSON.stringify(checkedTaches));
+  console.log(Object.values(checkedTaches).filter((value) => value));
+
   return (
     <>
       <ul className="checklist">
@@ -43,6 +47,7 @@ function Checklist() {
           />
         ))}
       </ul>
+      <progress className="progressBar" value={progression} max={100}></progress>
     </>
   );
 }
