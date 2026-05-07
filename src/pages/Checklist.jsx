@@ -4,26 +4,34 @@ import CheckItem from '../components/CheckItem';
 
 function Checklist() {
 
-    const [checkedTaches, setCheckedTaches] = useState([]);
+    const [checkedTaches, setCheckedTaches] = useState(() =>{     
+      
+      const depart = {}
+      taches.forEach(tache =>{
+
+      depart[tache.id] = false
+
+    })
+    return depart
+  }); 
+
     const basculeTache = (id) => {
-  if (checkedTaches.includes(id)) {
-    // L'id est déjà coché → on le retire
-    setCheckedTaches(checkedTaches.filter(i => i !== id));
-  } else {
-    // L'id n'est pas coché → on l'ajoute
-    setCheckedTaches([...checkedTaches, id]);
-  }
 
-
+      setCheckedTaches(precedent => ({
+    ...precedent,       // copie tout l'objet
+    [id]: !precedent[id] // inverse juste la valeur de l'id cliqué
+    }))
 };
 
+console.log(JSON.stringify(checkedTaches))
 return (
   <>
     <ul className='checklist'>
       {taches.map((tache) => (
       <CheckItem
+        key={tache.id}        
         tache={tache}
-        cochee={checkedTaches.includes(tache.id)}  
+        cochee={checkedTaches[tache.id]}  
         bascule={basculeTache}/>
       ))}
     </ul>
