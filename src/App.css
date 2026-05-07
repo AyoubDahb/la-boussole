@@ -189,7 +189,7 @@
 
 .checklist-desc {
   font-size: 12px;
-  color: #888;
+  color:#888;
   line-height: 1.4;
 }
 
@@ -208,3 +208,16 @@
   .checklist-titre { font-size: 13px; }
   .checklist-desc { font-size: 11px; }
 }
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: white;
+  color: black;
+}
+
+.page-content h1 {
+  color: #1E3A5F;
+}
+
