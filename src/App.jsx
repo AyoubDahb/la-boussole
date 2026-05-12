@@ -1,23 +1,19 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import Topbar from './components/TopBar'
 import NavBar from './components/NavBar'
-import Accueil from './pages/Accueil'
-import Plan from './pages/Plan'
-import Documents from './pages/Documents'
-import Checklist from './pages/Checklist'
-import logoHS from './assets/LogoHS.jpg'
 
 function App() {
+  const [onglet, setOnglet] = useState('accueil')
+
   return (
     <BrowserRouter>
       <div className="app">
-        <NavBar logoSrc={logoHS} />
+        <Topbar />
+        <NavBar onglet={onglet} setOnglet={setOnglet} />
+          
         <main>
-          <Routes>
-            <Route path="/" element={<Accueil />} />
-            <Route path="/plan" element={<Plan />} />
-            <Route path="/documents" element={<Documents />} />
-            <Route path="/checklist" element={<Checklist />} />
-          </Routes>
+
         </main>
       </div>
     </BrowserRouter>
